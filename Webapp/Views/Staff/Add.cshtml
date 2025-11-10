@@ -1,0 +1,61 @@
+@model Webapp.Models.Staff
+
+@{
+    ViewData["Title"] = "Add New Staff";
+}
+
+<h1>Add New Staff</h1>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form action="/AddStaff" method="post">
+            @Html.AntiForgeryToken()
+            
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Id" class="form-label">Staff ID:</label>
+                <input asp-for="Id" class="form-control" data-testid="staff-id-input" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Staff Name:</label>
+                <input asp-for="Name" class="form-control" data-testid="staff-name-input" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email:</label>
+                <input asp-for="Email" class="form-control" data-testid="email-input" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">Phone:</label>
+                <input asp-for="Phone" class="form-control" data-testid="phone-input" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="StartingDate" class="form-label">Start Date:</label>
+                <input asp-for="StartingDate" type="date" class="form-control" data-testid="start-date-input" />
+                <span asp-validation-for="StartingDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PhotoUrl" class="form-label">Photo URL:</label>
+                <input asp-for="PhotoUrl" class="form-control" data-testid="photo-url-input" />
+                <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+                <small class="form-text text-muted">Leave blank for default avatar</small>
+            </div>
+
+            <button type="submit" class="btn btn-success" data-testid="submit-button">Add Staff Member</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

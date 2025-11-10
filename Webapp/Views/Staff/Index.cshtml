@@ -1,0 +1,36 @@
+@model IEnumerable<Webapp.Models.Staff>
+
+@{
+    ViewData["Title"] = "Staff List";
+}
+
+<h1>Staff List</h1>
+
+<p>
+    <a href="/AddStaff" class="btn btn-success">Add New Staff</a>
+</p>
+
+@if (Model == null || !Model.Any())
+{
+    <p><em>No staff found.</em></p>
+}
+else
+{
+    <div class="row gy-4">
+        @foreach (var staff in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-12" data-testid="staff-card-@staff.Id">
+                <div class="card h-100 shadow-sm">
+                    <img src="@staff.PhotoUrl" class="card-img-top" alt="@staff.Name" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@staff.Name</h5>
+                        
+                        <a href="/StaffDetail/@staff.Id" class="btn btn-primary" data-testid="view-details-button-@staff.Id">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

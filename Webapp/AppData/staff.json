@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "S001",
+    "Name": "John Wick",
+    "Email": "SparklingDaisy@gmail.com",
+    "Phone": "679-116-9420",
+    "StartingDate": "2009-10-25T00:00:00",
+    "PhotoUrl": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg"
+  },
+  {
+    "Id": "S002",
+    "Name": "Jean Wick",
+    "Email": "JeanWick@gmail.com",
+    "Phone": "024-961-1976",
+    "StartingDate": "2025-11-10T00:00:00",
+    "PhotoUrl": "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg"
+  }
+]
